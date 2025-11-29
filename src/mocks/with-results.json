@@ -1,0 +1,27 @@
+{
+    "Search": [
+        {
+            "Title": "El jocker",
+            "Year": "1979",
+            "imdbID": "tt29709829",
+            "Type": "movie",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BYjdlNjEzODAtZDU5NS00YWRlLWI4ZDEtOGJmZTllMjU3YWQ4XkEyXkFqcGc@._V1_SX300.jpg"
+        },
+        {
+            "Title": "El jocker",
+            "Year": "1979",
+            "imdbID": "tt29709829",
+            "Type": "movie",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BYjdlNjEzODAtZDU5NS00YWRlLWI4ZDEtOGJmZTllMjU3YWQ4XkEyXkFqcGc@._V1_SX300.jpg"
+        },
+        {
+            "Title": "Jocker 3, okhota na zverya",
+            "Year": "2018–2019",
+            "imdbID": "tt10066166",
+            "Type": "series",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BYmVlY2JjOGEtMzkzMS00MGQ0LWJhMTQtZTVmYTA4YWI3OWUwXkEyXkFqcGc@._V1_SX300.jpg"
+        }
+    ],
+    "totalResults": "3",
+    "Response": "True"
+}
