@@ -12,7 +12,9 @@ Requerimientos:
 - Necesita mostrar un input para buscar la pelicula y un botón para buscar.
 - Lista las peliculas encontradas y muetra el titulo, año y poster.
 - Hacer funcionar el formulario.
+- Hacer el fetching d edatos a la API
 - Haz que las peliculas se muestren en un gird responsive.
+
 
 Primera iteración:
 
