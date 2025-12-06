@@ -2,7 +2,8 @@ import './App.css'
 //import { useRef } from 'react'
 import { useMovies } from './hooks/useMovies'
 import { Movies } from './components/Movies'
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, useMemo } from 'react'
+import debounce from 'just-debounce-it'
 
 function useSearch() {
   const [search, updateSearch] = useState('')
@@ -29,17 +30,42 @@ function useSearch() {
 }
 
 function App() {
+  const [sort, setSort] = useState(false)
+
   const { search, updateSearch, error } = useSearch()
-  const { movies, loading, getMovies } = useMovies({ search })
+  const { movies, loading, getMovies } = useMovies({ search, sort })
+
+  const debouncedGetMovies = useMemo(() => {
+    // La función DEBOUNCE se llama solo la primera vez o si [getMovies] cambia.
+    return debounce(search => {
+      getMovies({ search });
+    }, 300);
+  }, [getMovies]); // Dependencia clave
+
+  // **IMPORTANTE**: Limpieza
+  useEffect(() => {
+    return () => {
+      // Usa el método .cancel() de lodash para limpiar el timer al desmontar.
+      debouncedGetMovies.cancel();
+    };
+  }, [debouncedGetMovies]);
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    getMovies()
+    getMovies({ search })
   }
 
-  const handleChange = (event) => {
-    updateSearch(event.target.value)
+  const handleSort = () => {
+    setSort(!sort)
   }
+
+
+  const handleChange = (event) => {
+    const newSearch = event.target.value
+    updateSearch(newSearch)
+    debouncedGetMovies(newSearch)
+  }
+
 
   return (
     <div className='page'>
@@ -48,6 +74,7 @@ function App() {
         <h1>Buscador de Peliculas</h1>
         <form className='Form' onSubmit={handleSubmit}>
           <input style={{ border: error ? '1px solid red' : '1px solid blue' }} onChange={handleChange} value={search} name='query' placeholder='The Matrix, Saving Private Ryan, Lone Survivor .....' />
+          <input type='checkbox' onChange={handleSort} checked={sort} /> Ordenar por titulo
           <button type='submit'>Buscar</button>
         </form>
         {error && <p style={{ color: 'red' }}>{error}</p>}
