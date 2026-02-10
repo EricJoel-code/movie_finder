@@ -1,23 +1,60 @@
-# Pruba técnica - Buscador de peliculas - Explicado por MiduDev
+# 🎬 Buscador de Películas
 
-Aplicacion para buscar peliculas 
+Prueba técnica desarrollada como ejercicio práctico siguiendo la explicación de **MiduDev**, enfocada en el consumo de APIs y buenas prácticas en aplicaciones frontend.
 
-Api a usar:
+La aplicación permite buscar películas y mostrar información relevante en una interfaz simple y responsive.
 
-- https://www.omdbapi.com/
-- API_KEY: 4287ad07
+---
 
-Requerimientos:
+## 🚀 Funcionalidades
 
-- Necesita mostrar un input para buscar la pelicula y un botón para buscar.
-- Lista las peliculas encontradas y muetra el titulo, año y poster.
-- Hacer funcionar el formulario.
-- Hacer el fetching d edatos a la API
-- Haz que las peliculas se muestren en un gird responsive.
+- Búsqueda de películas mediante un campo de texto
+- Botón para ejecutar la búsqueda
+- Visualización de resultados con:
+  - Título
+  - Año de estreno
+  - Póster
+- Diseño en grid responsive
+- Consumo de API externa
 
+---
 
-Primera iteración:
+## 🌐 API Utilizada
 
-- Evitar que se haga la búsqueda dos veces seguidas.
-- Haz que la busqueda se haga automaticamente al escribir.
-- Evita que se haga la búsqueda continuamente al escribir (debounce)
+- **OMDb API**: https://www.omdbapi.com/
+
+> ⚠️ La API Key se utiliza solo con fines educativos.
+
+---
+
+## 📋 Requisitos Implementados
+
+- Input para buscar películas
+- Formulario funcional
+- Fetch de datos desde la API
+- Renderizado dinámico de resultados
+- Maquetación responsive en formato grid
+
+---
+
+## 🔁 Mejoras (Iteraciones)
+
+### Primera iteración
+- Evitar búsquedas duplicadas consecutivas
+- Búsqueda automática al escribir
+- Implementación de **debounce** para evitar múltiples peticiones innecesarias
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+- JavaScript
+- HTML
+- CSS
+- Fetch API
+
+---
+
+## 📌 Nota
+
+Este proyecto fue desarrollado con fines educativos y de práctica, aplicando conceptos de consumo de APIs, manejo de estado y optimización de búsquedas en el frontend.
